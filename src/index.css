@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  font-family:
+    ui-rounded, "SF Pro Display", "SF Pro Text", "Avenir Next", "Segoe UI",
+    sans-serif;
+  background: #05070f;
+  --color-brand: #493aab;
+  --color-brand-strong: #3d2f98;
+  --color-brand-text: #b8b0ef;
+  --color-brand-soft: rgba(73, 58, 171, 0.14);
+  --color-brand-border: rgba(123, 107, 216, 0.28);
+  --color-surface: rgba(255, 255, 255, 0.06);
+}
+
+html {
+  background: #05070f;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(73, 58, 171, 0.14), transparent 24%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.06), transparent 22%),
+    linear-gradient(180deg, #0b0d15 0%, #070912 55%, #05060c 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+textarea {
+  resize: vertical;
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+iframe {
+  border: 0;
+}
