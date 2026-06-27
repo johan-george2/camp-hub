@@ -35,9 +35,7 @@ export const SchedulePage = ({ now }: SchedulePageProps) => {
   return (
     <div className="space-y-5">
       <SectionHeader
-        eyebrow="Schedule"
-        title="Weekend timeline"
-        subtitle="The current item highlights itself and the list follows along."
+        title="Weekend Schedule"
       />
 
       <div className="grid grid-cols-3 gap-2 rounded-3xl border border-white/10 bg-white/6 p-1">

@@ -143,7 +143,7 @@
     "day": "saturday",
     "date": "2026-07-25",
     "startTime": "10:45",
-    "endTime": "11:05",
+    "endTime": "11:00",
     "title": "Morning Tea",
     "location": "",
     "description": "",
@@ -153,23 +153,23 @@
     "id": "sat-worship2",
     "day": "saturday",
     "date": "2026-07-25",
-    "startTime": "11:05",
-    "endTime": "11:35",
-    "title": "Praise and Worship",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "title": "Major Activity",
     "location": "",
     "description": "",
-    "category": "worship"
+    "category": "activity"
   },
   {
     "id": "sat-major-activity",
     "day": "saturday",
     "date": "2026-07-25",
-    "startTime": "11:35",
+    "startTime": "12:00",
     "endTime": "12:30",
-    "title": "Major Activity",
+    "title": "Praise and Worship",
     "location": "",
     "description": "",
-    "category": "activity"
+    "category": "worship"
   },
   {
     "id": "sat-lunch",
