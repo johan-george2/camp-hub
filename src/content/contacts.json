@@ -1,0 +1,33 @@
+[
+  {
+    "id": "coord",
+    "name": "Tianka",
+    "role": "Camp Coordinator",
+    "phone": "+61451208076"
+  },
+  {
+    "id": "coord",
+    "name": "Alan",
+    "role": "Camp Coordinator",
+    "phone": "+61434894339"
+  },
+  {
+    "id": "transport",
+    "name": "Ryan",
+    "role": "Transport Team",
+    "phone": "+61479049326"
+  },
+  {
+    "id": "transport",
+    "name": "Jonas",
+    "role": "Transport Team",
+    "phone": "+61413549244"
+  },
+  {
+    "id": "emergency",
+    "name": "Emergency Services",
+    "role": "000",
+    "phone": "000",
+    "notes": "Call immediately for life-threatening emergencies."
+  }
+]

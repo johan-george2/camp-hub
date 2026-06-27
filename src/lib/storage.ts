@@ -1,4 +1,4 @@
-import { prayerWallContent } from '../content/prayerWall';
+import { prayerWall } from './content';
 import type { PrayerRequest } from '../types';
 
 const prayerWallKey = 'camp-hub-prayer-wall';
@@ -7,7 +7,7 @@ const packingKey = 'camp-hub-packing-checklist';
 export const loadPrayerRequests = (): PrayerRequest[] => {
   const raw = localStorage.getItem(prayerWallKey);
   if (!raw) {
-    return prayerWallContent.sampleRequests;
+    return prayerWall.sampleRequests;
   }
 
   try {

@@ -19,14 +19,6 @@ export interface ScheduleEvent {
   category: 'session' | 'meal' | 'free-time' | 'arrival' | 'departure' | 'worship';
 }
 
-export interface Announcement {
-  id: string;
-  title: string;
-  body: string;
-  timestamp: string;
-  pinned?: boolean;
-}
-
 export interface Contact {
   id: string;
   name: string;
@@ -36,37 +28,10 @@ export interface Contact {
   notes?: string;
 }
 
-export interface PlaylistLink {
-  id: string;
-  title: string;
-  description: string;
-  href: string;
-}
-
-export interface PlaylistEmbed {
-  title: string;
-  embedUrl: string;
-  openUrl: string;
-}
-
-export interface PlaylistSongMeaning {
-  id: string;
-  title: string;
-  artist: string;
-  meaning: string;
-}
-
 export interface PackingItem {
   id: string;
   label: string;
   category: string;
-}
-
-export interface BibleVerse {
-  id: string;
-  reference: string;
-  text: string;
-  reflection?: string;
 }
 
 export interface PrayerRequest {
@@ -78,22 +43,14 @@ export interface PrayerRequest {
 
 export interface CampContent {
   name: string;
+  locationName: string;
   theme: string;
-  themeVerse: string;
+  themeSubtitle: string;
+  themeScripture: string;
+  themeScriptureReference: string;
   start: string;
   end: string;
-  arrivalInfo: string;
-  departureInfo: string;
   address: string;
+  addressLines: string[];
   mapsLink: string;
-  reminders: string;
-}
-
-export interface PrayerWallContent {
-  introTitle: string;
-  introSubtitle: string;
-  formPlaceholder: string;
-  submitLabel: string;
-  prayedLabel: string;
-  sampleRequests: PrayerRequest[];
 }

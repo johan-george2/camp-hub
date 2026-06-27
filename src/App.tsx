@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { camp } from './content/camp';
+import { camp } from './lib/content';
 import { BottomNav } from './components/BottomNav';
 import { HomePage } from './components/pages/HomePage';
 import { MorePage } from './components/pages/MorePage';
@@ -7,8 +7,7 @@ import { PreCampPage } from './components/pages/PreCampPage';
 import { PlaylistPage } from './components/pages/PlaylistPage';
 import { SchedulePage } from './components/pages/SchedulePage';
 import { useNow } from './hooks/useNow';
-import { getVerseOfTheDay } from './services/verseService';
-import type { BibleVerse, TabId } from './types';
+import type { TabId } from './types';
 
 const pageTitles: Record<TabId, string> = {
   home: camp.name,
@@ -20,12 +19,7 @@ const pageTitles: Record<TabId, string> = {
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabId>('home');
-  const [verse, setVerse] = useState<BibleVerse | null>(null);
   const now = useNow(30000);
-
-  useEffect(() => {
-    getVerseOfTheDay().then(setVerse);
-  }, []);
 
   useEffect(() => {
     document.title = `${camp.name} Camp Hub`;
@@ -49,7 +43,7 @@ function App() {
         </header>
 
         <main className="flex-1 px-5 pb-6">
-          {activeTab === 'home' ? <HomePage now={now} verse={verse} /> : null}
+          {activeTab === 'home' ? <HomePage now={now} /> : null}
           {activeTab === 'schedule' ? <SchedulePage now={now} /> : null}
           {activeTab === 'playlist' ? <PlaylistPage /> : null}
           {activeTab === 'pre-camp' ? <PreCampPage now={now} /> : null}

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { scheduleDays } from '../../content/schedule';
+import { scheduleDays } from '../../lib/content';
 import { Card } from '../Card';
 import { SectionHeader } from '../SectionHeader';
 import { formatTime } from '../../lib/time';

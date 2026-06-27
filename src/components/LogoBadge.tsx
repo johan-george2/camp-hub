@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { camp } from '../content/camp';
+import { camp } from '../lib/content';
 
 interface LogoBadgeProps {
   compact?: boolean;
@@ -8,16 +8,20 @@ interface LogoBadgeProps {
 export const LogoBadge = ({ compact = false }: LogoBadgeProps) => {
   const [imageMissing, setImageMissing] = useState(false);
 
-  if (!imageMissing) {
-    return (
-      <img
-        src="/logo.png"
-        alt={`${camp.name} logo`}
-        onError={() => setImageMissing(true)}
-        className={compact ? 'h-11 w-auto rounded-2xl object-contain' : 'h-14 w-auto rounded-2xl object-contain'}
-      />
-    );
-  }
+if (!imageMissing) {
+  return (
+    <img
+      src="/logo.png"
+      alt={`${camp.name} logo`}
+      onError={() => setImageMissing(true)}
+      className={
+        compact
+          ? "h-11 w-auto object-contain"
+          : "block w-full h-auto object-contain"
+      }
+    />
+  );
+}
 
   return (
     <div

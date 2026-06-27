@@ -1,0 +1,407 @@
+{
+  "days": [
+    { "key": "friday", "label": "Friday", "date": "2026-07-24" },
+    { "key": "saturday", "label": "Saturday", "date": "2026-07-25" },
+    { "key": "sunday", "label": "Sunday", "date": "2026-07-26" }
+  ],
+"events": [
+  {
+    "id": "fri-registration",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "18:00",
+    "endTime": "19:00",
+    "title": "Check-in",
+    "location": "",
+    "description": "",
+    "category": "arrival"
+  },
+  {
+    "id": "fri-dinner",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "19:00",
+    "endTime": "20:00",
+    "title": "Dinner",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "fri-welcome",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "20:10",
+    "endTime": "20:25",
+    "title": "Welcome to Camp",
+    "location": "",
+    "description": "",
+    "category": "arrival"
+  },
+  {
+    "id": "fri-worship",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "20:25",
+    "endTime": "20:45",
+    "title": "Praise and Worship",
+    "location": "",
+    "description": "",
+    "category": "worship"
+  },
+  {
+    "id": "fri-talk1",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "20:45",
+    "endTime": "21:15",
+    "title": "Talk 1: Introduction",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "fri-discussion",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "21:15",
+    "endTime": "21:45",
+    "title": "Small Group Discussion",
+    "location": "",
+    "description": "",
+    "category": "discussion"
+  },
+  {
+    "id": "fri-icebreakers",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "21:45",
+    "endTime": "22:15",
+    "title": "Icebreakers",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "fri-bed",
+    "day": "friday",
+    "date": "2026-07-24",
+    "startTime": "22:15",
+    "endTime": "23:59",
+    "title": "Go to Bed",
+    "location": "",
+    "description": "",
+    "category": "rest"
+  },
+
+  {
+    "id": "sat-breakfast",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "08:00",
+    "endTime": "09:00",
+    "title": "Breakfast",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sat-worship1",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "09:00",
+    "endTime": "09:30",
+    "title": "Praise and Worship",
+    "location": "",
+    "description": "",
+    "category": "worship"
+  },
+  {
+    "id": "sat-talk2",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "09:30",
+    "endTime": "10:00",
+    "title": "Talk 2",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sat-group1",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "10:15",
+    "endTime": "10:45",
+    "title": "Group Discussion",
+    "location": "",
+    "description": "",
+    "category": "discussion"
+  },
+  {
+    "id": "sat-morning-tea",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "10:45",
+    "endTime": "11:05",
+    "title": "Morning Tea",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sat-worship2",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "11:05",
+    "endTime": "11:35",
+    "title": "Praise and Worship",
+    "location": "",
+    "description": "",
+    "category": "worship"
+  },
+  {
+    "id": "sat-major-activity",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "11:35",
+    "endTime": "12:30",
+    "title": "Major Activity",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "sat-lunch",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "12:30",
+    "endTime": "13:20",
+    "title": "Lunch",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sat-free-time",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "13:30",
+    "endTime": "15:00",
+    "title": "Camp Activity / Free Time",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "sat-afternoon-tea",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "15:00",
+    "endTime": "15:15",
+    "title": "Afternoon Tea",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sat-sports",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "15:15",
+    "endTime": "16:45",
+    "title": "Camp Activity 2 / Sports Competition",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "sat-talk3",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "17:00",
+    "endTime": "17:30",
+    "title": "Talk 3",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sat-discussion",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "17:30",
+    "endTime": "17:50",
+    "title": "Discussion Group",
+    "location": "",
+    "description": "",
+    "category": "discussion"
+  },
+  {
+    "id": "sat-qa",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "18:00",
+    "endTime": "18:30",
+    "title": "Q&A",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sat-dinner",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "18:30",
+    "endTime": "19:20",
+    "title": "Dinner",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sat-worship3",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "19:30",
+    "endTime": "19:50",
+    "title": "Praise and Worship",
+    "location": "",
+    "description": "",
+    "category": "worship"
+  },
+  {
+    "id": "sat-testimony",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "19:50",
+    "endTime": "20:50",
+    "title": "Testimony",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sat-campfire",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "21:00",
+    "endTime": "22:00",
+    "title": "Campfire",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "sat-bed",
+    "day": "saturday",
+    "date": "2026-07-25",
+    "startTime": "22:00",
+    "endTime": "23:59",
+    "title": "Go to Bed",
+    "location": "",
+    "description": "",
+    "category": "rest"
+  },
+
+  {
+    "id": "sun-breakfast",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "08:00",
+    "endTime": "08:30",
+    "title": "Breakfast",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sun-service",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "08:45",
+    "endTime": "09:45",
+    "title": "Divine Service",
+    "location": "",
+    "description": "",
+    "category": "service"
+  },
+  {
+    "id": "sun-talk4",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "09:45",
+    "endTime": "10:15",
+    "title": "Talk 4",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sun-morning-tea",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "10:15",
+    "endTime": "10:30",
+    "title": "Morning Tea",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  },
+  {
+    "id": "sun-checkout",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "10:30",
+    "endTime": "11:00",
+    "title": "Check Out of Rooms",
+    "location": "",
+    "description": "",
+    "category": "departure"
+  },
+  {
+    "id": "sun-activity",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "11:00",
+    "endTime": "12:00",
+    "title": "Activity",
+    "location": "",
+    "description": "",
+    "category": "activity"
+  },
+  {
+    "id": "sun-feedback",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "12:00",
+    "endTime": "12:20",
+    "title": "Feedback, Thanks & Group Photo",
+    "location": "",
+    "description": "",
+    "category": "session"
+  },
+  {
+    "id": "sun-goodbye",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "12:20",
+    "endTime": "12:50",
+    "title": "Goodbyes & Departure",
+    "location": "",
+    "description": "",
+    "category": "departure"
+  },
+  {
+    "id": "sun-lunch",
+    "day": "sunday",
+    "date": "2026-07-26",
+    "startTime": "12:50",
+    "endTime": "13:20",
+    "title": "Lunch (Not Catered)",
+    "location": "",
+    "description": "",
+    "category": "meal"
+  }
+]
+}

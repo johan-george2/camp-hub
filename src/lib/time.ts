@@ -11,6 +11,15 @@ export const formatDateTime = (iso: string) =>
     minute: '2-digit',
   }).format(new Date(iso));
 
+export const formatEventDateTime = (iso: string) =>
+  new Intl.DateTimeFormat('en-AU', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    hour: 'numeric',
+    minute: '2-digit',
+  }).format(new Date(iso));
+
 export const formatRelativeCountdown = (target: Date, now: Date) => {
   const diffMs = target.getTime() - now.getTime();
   if (diffMs <= 0) {
@@ -26,6 +35,26 @@ export const formatRelativeCountdown = (target: Date, now: Date) => {
   }
 
   return `${hours}h ${minutes}m`;
+};
+
+export const formatEventCountdown = (target: Date, now: Date) => {
+  const diffMs = target.getTime() - now.getTime();
+  if (diffMs <= 0) {
+    return 'Started';
+  }
+
+  const dayMs = 1000 * 60 * 60 * 24;
+  const totalDays = Math.floor(diffMs / dayMs);
+
+  if (totalDays >= 2) {
+    return `${totalDays} days`;
+  }
+
+  if (totalDays >= 1) {
+    return 'tomorrow';
+  }
+
+  return formatRelativeCountdown(target, now);
 };
 
 export const formatLongDate = (iso: string) =>

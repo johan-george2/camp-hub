@@ -1,0 +1,40 @@
+{
+  "countdownDate": "2026-07-24T16:00:00+10:00",
+"packingChecklist": [
+  { "id": "medical", "label": "Emergency contact information & completed medical form", "category": "Essentials" },
+  { "id": "bible", "label": "Bible", "category": "Essentials" },
+  { "id": "notebook", "label": "Notebook & pen", "category": "Essentials" },
+
+  { "id": "warm-clothes", "label": "Warm clothing (jackets/sweaters)", "category": "Clothing" },
+  { "id": "day-clothes", "label": "T-shirts, pants/shorts & undergarments", "category": "Clothing" },
+  { "id": "sports", "label": "Sports clothes / activewear", "category": "Clothing" },
+  { "id": "rain", "label": "Rain jacket or poncho", "category": "Clothing" },
+  { "id": "shoes", "label": "Closed-toe shoes", "category": "Clothing" },
+  { "id": "thongs", "label": "Thongs / flip-flops", "category": "Clothing" },
+  { "id": "hat", "label": "Hat or cap", "category": "Clothing" },
+  { "id": "pyjamas", "label": "Sleepwear / pyjamas", "category": "Clothing" },
+
+  { "id": "sleeping-bag", "label": "Sleeping bag or warm blankets", "category": "Bedding" },
+  { "id": "sheet", "label": "Fitted sheet", "category": "Bedding" },
+  { "id": "pillow", "label": "Pillow & pillowcase", "category": "Bedding" },
+
+  { "id": "toiletries", "label": "Toiletries (toothbrush, toothpaste, deodorant, soap, shampoo)", "category": "Personal Items" },
+  { "id": "towel", "label": "Towel", "category": "Personal Items" },
+  { "id": "sunscreen", "label": "Sunscreen", "category": "Personal Items" },
+  { "id": "insect", "label": "Insect repellent", "category": "Personal Items" },
+  { "id": "water", "label": "Reusable water bottle", "category": "Personal Items" },
+  { "id": "charger", "label": "Phone charger (portable power bank recommended)", "category": "Personal Items" },
+  { "id": "medication", "label": "Prescription medication (clearly labelled)", "category": "Personal Items" },
+
+  { "id": "blanket", "label": "Blanket or floor mat for hall sessions", "category": "Gear" }
+],
+  "arrivalInformation": "Friday from 6:00 PM. Check in and you'll receive your goodie bag, important information, and everything you'll need for the weekend.",
+  "departureInformation": "Sunday at 2:00 PM from the main car park.",
+  "campAddressTitle": "Camp Address",
+  "campAddressLines": [
+    "WEC Camp",
+    "30 Nentoura Rd",
+    "Morisset NSW 2264"
+  ],
+  "campAddress": "WEC Camp, 30 Nentoura Rd, Morisset NSW 2264"
+}
