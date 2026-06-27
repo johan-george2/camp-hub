@@ -1,0 +1,48 @@
+{
+  "pageTitle": "Prayer Requests",
+  "subtitle": "Prayer is one of the greatest gifts we can give each other. Let's join together in praying for our camp, one another, and what God will do throughout the weekend.",
+  "prompts": [
+    {
+      "id": "open-hearts",
+      "icon": "heart",
+      "title": "Pray for Open Hearts",
+      "prompt": "Pray that every camper would come ready to hear God clearly, with open hearts and fewer distractions."
+    },
+    {
+      "id": "safe-travel",
+      "icon": "travel",
+      "title": "Pray for Safe Travel",
+      "prompt": "Pray for safe travel to and from camp, alert drivers, and smooth journeys for every family."
+    },
+    {
+      "id": "speakers",
+      "icon": "microphone",
+      "title": "Pray for the Speakers",
+      "prompt": "Pray for Dn. Stephan Sabu and Biju Ninan as they share God's Word, that they would speak with clarity, courage, and grace."
+    },
+    {
+      "id": "worship",
+      "icon": "worship",
+      "title": "Pray for the Worship Team",
+      "prompt": "Pray that worship would be sincere, joyful, and centred on Jesus, drawing hearts toward Him."
+    },
+    {
+      "id": "leaders",
+      "icon": "leaders",
+      "title": "Pray for the Leaders",
+      "prompt": "Pray for every leader serving this weekend, that God would give them wisdom, patience, humility, and joy."
+    },
+    {
+      "id": "friendships",
+      "icon": "community",
+      "title": "Pray for New Friendships",
+      "prompt": "Pray that new friendships would form easily, no one would feel left out, and our camp would be full of genuine love."
+    },
+    {
+      "id": "beyond-camp",
+      "icon": "growth",
+      "title": "Pray Beyond Camp",
+      "prompt": "Pray that the theme Undivided would keep shaping our lives after camp, in the ordinary days that follow."
+    }
+  ]
+}

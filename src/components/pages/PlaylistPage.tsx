@@ -10,7 +10,7 @@ export const PlaylistPage = () => (
       <div className="border-b border-white/10 p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-sm text-slate-400">Embedded playlist</p>
+            <p className="text-sm text-slate-400">Spotify playlist</p>
             <h3 className="mt-1 text-xl font-semibold text-white">{playlist.spotifyTitle}</h3>
           </div>
           <a
@@ -19,7 +19,7 @@ export const PlaylistPage = () => (
             rel="noreferrer"
             className="inline-flex min-h-11 items-center justify-center rounded-2xl bg-[color:var(--color-brand)] px-4 text-sm font-semibold text-white transition hover:bg-[color:var(--color-brand-strong)]"
           >
-            Open Spotify
+            Spotify
           </a>
         </div>
       </div>

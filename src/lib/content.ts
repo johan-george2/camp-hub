@@ -2,14 +2,14 @@ import campJson from '../content/camp.json';
 import contactsJson from '../content/contacts.json';
 import playlistJson from '../content/playlist.json';
 import preCampJson from '../content/pre-camp.json';
-import prayerWallJson from '../content/prayer-wall.json';
+import prayerPromptsJson from '../content/prayer-prompts.json';
 import scheduleJson from '../content/schedule.json';
 import type {
   CampContent,
   Contact,
   DayKey,
   PackingItem,
-  PrayerRequest,
+  PrayerPrompt,
   ScheduleEvent,
 } from '../types';
 
@@ -66,8 +66,10 @@ export const playlist = playlistJson as {
   }>;
 };
 
-export const prayerWall = prayerWallJson as {
-  sampleRequests: PrayerRequest[];
+export const prayerPrompts = prayerPromptsJson as {
+  pageTitle: string;
+  subtitle: string;
+  prompts: PrayerPrompt[];
 };
 
 export const scheduleDays = Object.fromEntries(

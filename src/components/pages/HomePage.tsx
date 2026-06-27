@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { camp } from '../../lib/content';
 import { Card } from '../Card';
 import { SectionHeader } from '../SectionHeader';
@@ -11,6 +11,13 @@ interface HomePageProps {
 
 export const HomePage = ({ now }: HomePageProps) => {
   const [logoMissing, setLogoMissing] = useState(false);
+  const [themeTapCount, setThemeTapCount] = useState(0);
+  const [showEasterEggOverlay, setShowEasterEggOverlay] = useState(false);
+  const [themeCardMotion, setThemeCardMotion] = useState<'idle' | 'pressed' | 'celebrate'>('idle');
+  const tapResetTimeoutRef = useRef<number | null>(null);
+  const overlayTimeoutRef = useRef<number | null>(null);
+  const themeMotionTimeoutRef = useRef<number | null>(null);
+  const overlayRevealTimeoutRef = useRef<number | null>(null);
   const campStart = new Date(camp.start);
   const isBeforeCamp = now.getTime() < campStart.getTime();
   const currentEvent = getCurrentEvent(now);
@@ -91,6 +98,82 @@ export const HomePage = ({ now }: HomePageProps) => {
     </div>
   );
 
+  useEffect(() => {
+    return () => {
+      if (tapResetTimeoutRef.current) {
+        window.clearTimeout(tapResetTimeoutRef.current);
+      }
+      if (overlayTimeoutRef.current) {
+        window.clearTimeout(overlayTimeoutRef.current);
+      }
+      if (themeMotionTimeoutRef.current) {
+        window.clearTimeout(themeMotionTimeoutRef.current);
+      }
+      if (overlayRevealTimeoutRef.current) {
+        window.clearTimeout(overlayRevealTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const dismissEasterEggOverlay = () => {
+    setShowEasterEggOverlay(false);
+
+    if (overlayTimeoutRef.current) {
+      window.clearTimeout(overlayTimeoutRef.current);
+      overlayTimeoutRef.current = null;
+    }
+  };
+
+  const handleThemeCardTap = () => {
+    if (tapResetTimeoutRef.current) {
+      window.clearTimeout(tapResetTimeoutRef.current);
+    }
+    if (themeMotionTimeoutRef.current) {
+      window.clearTimeout(themeMotionTimeoutRef.current);
+    }
+    if (overlayRevealTimeoutRef.current) {
+      window.clearTimeout(overlayRevealTimeoutRef.current);
+    }
+
+    const nextCount = themeTapCount + 1;
+
+    if (nextCount >= 7) {
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+        navigator.vibrate?.(80);
+      }
+
+      setThemeTapCount(0);
+      setThemeCardMotion('celebrate');
+
+      themeMotionTimeoutRef.current = window.setTimeout(() => {
+        setThemeCardMotion('idle');
+      }, 220);
+
+      overlayRevealTimeoutRef.current = window.setTimeout(() => {
+        setShowEasterEggOverlay(true);
+
+        if (overlayTimeoutRef.current) {
+          window.clearTimeout(overlayTimeoutRef.current);
+        }
+
+        overlayTimeoutRef.current = window.setTimeout(() => {
+          setShowEasterEggOverlay(false);
+        }, 3000);
+      }, 180);
+
+      return;
+    }
+
+    setThemeCardMotion('pressed');
+    setThemeTapCount(nextCount);
+    themeMotionTimeoutRef.current = window.setTimeout(() => {
+      setThemeCardMotion('idle');
+    }, 180);
+    tapResetTimeoutRef.current = window.setTimeout(() => {
+      setThemeTapCount(0);
+    }, 2000);
+  };
+
   return (
     <div className="space-y-5">
       {!logoMissing ? (
@@ -104,22 +187,37 @@ export const HomePage = ({ now }: HomePageProps) => {
         </div>
       ) : null}
 
-      <Card className="relative overflow-hidden border-[color:var(--color-brand-border)] bg-[radial-gradient(circle_at_top_left,rgba(140,121,255,0.28),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,173,71,0.12),transparent_28%),linear-gradient(145deg,rgba(73,58,171,0.42),rgba(28,20,63,0.94)_58%,rgba(6,8,16,0.98))] px-6 py-6">
+      <Card
+        className={`relative overflow-hidden border-[color:var(--color-brand-border)] bg-[radial-gradient(circle_at_top_left,rgba(140,121,255,0.28),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,173,71,0.12),transparent_28%),linear-gradient(145deg,rgba(73,58,171,0.42),rgba(28,20,63,0.94)_58%,rgba(6,8,16,0.98))] px-6 py-6 transition-[transform,box-shadow] duration-200 ease-out ${
+          themeCardMotion === 'pressed'
+            ? 'scale-[0.98] shadow-[0_28px_68px_rgba(0,0,0,0.42),0_0_28px_rgba(123,107,216,0.12)]'
+            : themeCardMotion === 'celebrate'
+              ? 'theme-card-pulse shadow-[0_30px_74px_rgba(0,0,0,0.42),0_0_34px_rgba(123,107,216,0.16)]'
+              : 'scale-100 shadow-[0_20px_60px_rgba(0,0,0,0.35)]'
+        }`}
+      >
         <div className="pointer-events-none absolute -right-10 top-4 h-24 w-24 rounded-full border border-white/8 bg-white/4 blur-sm" />
         <div className="pointer-events-none absolute bottom-0 left-0 h-20 w-20 bg-[radial-gradient(circle,rgba(255,255,255,0.12),transparent_65%)]" />
-        <div className="relative space-y-4">
-          <div className="flex items-center gap-2.5">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/10 text-sm text-amber-100 shadow-[0_0_24px_rgba(255,202,120,0.16)]">
-              ♛
-            </span>
+        <button
+          type="button"
+          onClick={handleThemeCardTap}
+          className="relative block w-full rounded-[1.7rem] text-left outline-none active:scale-[0.995]"
+          aria-label="Camp theme verse"
+        >
+          <div className="space-y-4">
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/10 text-sm text-amber-100 shadow-[0_0_24px_rgba(255,202,120,0.16)]">
+                ♛
+              </span>
+            </div>
+            <div className="space-y-3">
+              <p className="max-w-[31ch] text-[1.02rem] leading-7 text-slate-100">{camp.themeScripture}</p>
+              <p className="pt-1 text-sm font-medium tracking-[0.04em] text-[color:var(--color-brand-text)]">
+                {camp.themeScriptureReference}
+              </p>
+            </div>
           </div>
-          <div className="space-y-3">
-            <p className="max-w-[31ch] text-[1.02rem] leading-7 text-slate-100">{camp.themeScripture}</p>
-            <p className="pt-1 text-sm font-medium tracking-[0.04em] text-[color:var(--color-brand-text)]">
-              {camp.themeScriptureReference}
-            </p>
-          </div>
-        </div>
+        </button>
       </Card>
 
       <SectionHeader eyebrow="Now" title="What’s happening now" />
@@ -221,6 +319,28 @@ export const HomePage = ({ now }: HomePageProps) => {
           )}
         </div>
       </Card>
+
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center px-6 transition duration-300 ${
+          showEasterEggOverlay ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+        aria-hidden={!showEasterEggOverlay}
+        aria-live="polite"
+        onClick={dismissEasterEggOverlay}
+      >
+        <div className="absolute inset-0 bg-slate-950/54 backdrop-blur-sm" />
+        <div
+          className={`relative w-full max-w-sm rounded-[2rem] border border-[color:var(--color-brand-border)] bg-[radial-gradient(circle_at_top,rgba(160,147,255,0.18),transparent_42%),linear-gradient(160deg,rgba(18,20,34,0.96),rgba(9,11,20,0.98))] px-6 py-7 text-center shadow-[0_26px_80px_rgba(0,0,0,0.42),0_0_42px_rgba(123,107,216,0.2)] transition duration-300 ${
+            showEasterEggOverlay ? 'scale-100 translate-y-0' : 'scale-95 translate-y-3'
+          }`}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-[color:var(--color-brand-text)]/70 to-transparent" />
+          <p className="text-[1.5rem] font-semibold tracking-[-0.02em] text-white">
+            ❤️ Jesus loves you ❤️
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ const tabs: { id: TabId; label: string; icon: string }[] = [
   { id: 'schedule', label: 'Schedule', icon: '◎' },
   { id: 'playlist', label: 'Playlist', icon: '♫' },
   { id: 'pre-camp', label: 'Pre-Camp', icon: '✦' },
-  { id: 'more', label: 'More', icon: '☰' },
+  { id: 'more', label: 'Info', icon: '☰' },
 ];
 
 interface BottomNavProps {

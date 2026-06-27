@@ -16,7 +16,19 @@ export interface ScheduleEvent {
   location: string;
   notes?: string;
   speaker?: string;
-  category: 'session' | 'meal' | 'free-time' | 'arrival' | 'departure' | 'worship';
+  category:
+    | 'session'
+    | 'meal'
+    | 'free-time'
+    | 'arrival'
+    | 'departure'
+    | 'worship'
+    | 'activity'
+    | 'discussion'
+    | 'rest'
+    | 'bible-study'
+    | 'devotion'
+    | 'break';
 }
 
 export interface Contact {
@@ -34,11 +46,11 @@ export interface PackingItem {
   category: string;
 }
 
-export interface PrayerRequest {
+export interface PrayerPrompt {
   id: string;
-  message: string;
-  createdAt: string;
-  prayedCount: number;
+  icon: string;
+  title: string;
+  prompt: string;
 }
 
 export interface CampContent {

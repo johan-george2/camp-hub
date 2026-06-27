@@ -14,7 +14,7 @@ const pageTitles: Record<TabId, string> = {
   schedule: 'Schedule',
   playlist: 'Playlist',
   'pre-camp': 'Pre-Camp',
-  more: 'More',
+  more: 'Other Information',
 };
 
 function App() {

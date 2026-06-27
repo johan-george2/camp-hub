@@ -3,6 +3,7 @@ import { preCamp } from '../../lib/content';
 import { loadPackingState, savePackingState } from '../../lib/storage';
 import { formatLongDate } from '../../lib/time';
 import { Card } from '../Card';
+import { PrayerPromptsSection } from '../PrayerPromptsSection';
 import { SectionHeader } from '../SectionHeader';
 
 interface PreCampPageProps {
@@ -10,8 +11,12 @@ interface PreCampPageProps {
 }
 
 export const PreCampPage = ({ now }: PreCampPageProps) => {
+  const packingCategories = useMemo(
+    () => [...new Set(preCamp.packingChecklist.map((item) => item.category))],
+    [],
+  );
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState<string>(() => packingCategories[0] ?? '');
 
   useEffect(() => {
     setCheckedItems(loadPackingState());
@@ -37,24 +42,9 @@ export const PreCampPage = ({ now }: PreCampPageProps) => {
     );
   };
 
-  const packingCategories = useMemo(
-    () => ['All', ...new Set(preCamp.packingChecklist.map((item) => item.category))],
-    [],
-  );
-
   const visiblePackingItems = useMemo(() => {
-    if (activeCategory === 'All') {
-      return preCamp.packingChecklist;
-    }
-
     return preCamp.packingChecklist.filter((item) => item.category === activeCategory);
   }, [activeCategory]);
-
-  const detailCards = [
-    { id: 'arrival', icon: '↗', title: 'Arrival Information', body: preCamp.arrivalInformation },
-    { id: 'departure', icon: '↘', title: 'Departure Information', body: preCamp.departureInformation },
-    { id: 'address', icon: '⌂', title: preCamp.campAddressTitle, body: preCamp.campAddress },
-  ];
 
   return (
     <div className="space-y-5">
@@ -86,10 +76,10 @@ export const PreCampPage = ({ now }: PreCampPageProps) => {
                     key={category}
                     type="button"
                     onClick={() => setActiveCategory(category)}
-                    className={`rounded-[20px] border px-4 py-2 text-sm font-medium whitespace-nowrap transition ${
+                    className={`rounded-[20px] px-4 py-3 text-sm font-medium whitespace-nowrap transition ${
                       isActive
-                        ? 'border-[color:var(--color-brand)] bg-[color:var(--color-brand)] text-white shadow-[0_10px_24px_rgba(73,58,171,0.24)]'
-                        : 'border-white/10 bg-white/6 text-slate-400 hover:bg-white/8 hover:text-white'
+                        ? 'bg-[color:var(--color-brand)] text-white shadow-[0_10px_24px_rgba(73,58,171,0.24)]'
+                        : 'text-slate-400 hover:bg-white/8 hover:text-white'
                     }`}
                   >
                     {category}
@@ -108,8 +98,8 @@ export const PreCampPage = ({ now }: PreCampPageProps) => {
                   onClick={() => togglePackingItem(item.id)}
                   className={`flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left transition ${
                     checked
-                      ? 'bg-[color:var(--color-brand-soft)] text-white'
-                      : 'bg-white/5 text-slate-300 hover:bg-white/7'
+                      ? 'border border-[color:var(--color-brand-border)] bg-[color:var(--color-brand-soft)] text-white'
+                      : 'border border-white/8 bg-white/5 text-slate-300 hover:bg-white/7'
                   }`}
                 >
                   <span
@@ -123,7 +113,6 @@ export const PreCampPage = ({ now }: PreCampPageProps) => {
                   </span>
                   <span className="flex-1">
                     {item.label}
-                    <span className="ml-2 text-xs text-slate-500">{item.category}</span>
                   </span>
                 </button>
               );
@@ -132,21 +121,7 @@ export const PreCampPage = ({ now }: PreCampPageProps) => {
         </div>
       </Card>
 
-      <div className="grid gap-3">
-        {detailCards.map((card) => (
-          <Card key={card.id} className="border-[color:var(--color-brand-border)] bg-[linear-gradient(145deg,rgba(73,58,171,0.1),rgba(255,255,255,0.04))]">
-            <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[color:var(--color-brand-soft)] text-lg text-[color:var(--color-brand-text)]">
-                {card.icon}
-              </div>
-              <div className="space-y-2">
-                <p className="text-sm font-semibold text-white">{card.title}</p>
-                <p className="text-sm leading-6 text-slate-300">{card.body}</p>
-              </div>
-            </div>
-          </Card>
-        ))}
-      </div>
+      <PrayerPromptsSection />
     </div>
   );
 };

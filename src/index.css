@@ -87,3 +87,19 @@ h6 {
     sans-serif;
   letter-spacing: -0.02em;
 }
+
+@keyframes theme-card-pulse {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.018);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.theme-card-pulse {
+  animation: theme-card-pulse 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
